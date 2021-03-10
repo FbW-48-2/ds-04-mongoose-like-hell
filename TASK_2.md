@@ -19,13 +19,12 @@
     * For routes POST & PATCH
         * console.log the received body (req.body)
 
-* Implement Mongoose in the routes
+* Implement Mongoose in these routes
     * For getting all students: Student.find()
     * For getting single student: Student.findById(...)
     * For creating a student: Student.create()
     * For updating a student: Student.findByIdAndUpdate(...)
     * For deleting a student: Student.findByIdAndDelete(...)
-    * Ignore errors for now...
     * Return the fetched / created / updated / deleted record as JSON to the browser using res.json()
 
 
