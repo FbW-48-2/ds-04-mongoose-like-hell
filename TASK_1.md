@@ -3,8 +3,8 @@
 ## Setup a student schema and model
 
 * Create a file server.js
-* Install the package "mongoose": `npm i mongoose`
-
+* Install package mongoose (stable version 5): `npm i mongoose@5`
+  
 * Create - if you do not have it so far - a database "students_db" in ATLAS (e.g. by using Compass)
 
 * Connect to your MongoDB students database on ATLAS using mongoose.connect(...)
