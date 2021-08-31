@@ -36,12 +36,24 @@ app.get("/students", async (req, res) => {
   try {
     const students = await Student.find();
     res.json(students);
-  } catch (err) {
-    next(err);
+  } catch (error) {
+    next(error);
   }
 });
 
 //get single student by id
+
+app.get("/students/:id", async (req, res) => {
+  const { id } = req.params;
+  try {
+    const student = await Student.findById(id);
+    res.json(student);
+  } catch (error) {
+    next(error);
+  }
+});
+
+//my central error handler is below
 
 app.use((err, req, res, next) => {
   console.log(err);
