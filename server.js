@@ -1,18 +1,20 @@
 import mongoose from "mongoose";
 import express from "express";
 import cors from "cors";
+import dotenv from "dotenv";
 import Student from "./models/Students.js";
 
 const app = express();
 
-const {Schema, model} = mongoose;
+dotenv.config();
 
 // * MIDDLEWARE * //
 app.use(express.json());
 app.use(cors());
 
+
 // * MONGOOSE CONNECTION * //
-const MONGO_URI = "mongodb+srv://user123:user123@intro-cluster.x4txg.mongodb.net/students_db"
+const MONGO_URI = process.env.mongo;
 
 mongoose.connect(MONGO_URI, {
   useNewUrlParser: true,
