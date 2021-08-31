@@ -17,6 +17,18 @@ import Student from './models/Student.js';
             `)
         });
 
+        // GET update all students to have role filled
+        app.get("/migration", async (req, res, next) => {
+            try {
+                const studentsUpdated = await Student.updateMany({
+                    role: { $exists: false }}, { $set: { role: "User" }
+                });
+                res.json( studentsUpdated );
+            } catch (error) {
+                next( error )
+            }
+        });
+
         // GET all students
         app.get("/students", async (req, res, next) => {
             try {
