@@ -28,3 +28,5 @@ const StudentSchema = new Schema(
     timestamps: true,
   }
 );
+
+const Student = model("Student", StudentSchema);
