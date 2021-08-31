@@ -65,6 +65,21 @@ app.post("/students", async (req, res) => {
   }
 });
 
+//update a student
+
+app.put("/students/:id", async (req, res) => {
+  const { id } = req.params;
+  const data = req.body;
+  try {
+    const studentUpdated = await Student.findByIdAndUpdate(id, data, {
+      new: true,
+    });
+    res.json(studentUpdated);
+  } catch (error) {
+    next(error);
+  }
+});
+
 //my central error handler is below
 
 app.use((error, req, res, next) => {
