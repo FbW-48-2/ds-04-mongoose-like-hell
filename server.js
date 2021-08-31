@@ -1,5 +1,6 @@
 // TASK 2
 import express from 'express'
+import cors from 'cors'
 import Student from './models/Student.js'
 import './db_connect.js'
 import createError from 'http-errors'
@@ -7,6 +8,7 @@ import createError from 'http-errors'
 const app = express()
 
 app.use(express.json())
+app.use(cors())
 
 app.get("/", (req, res)=> {
     res.send(`<h1>Hello from Students API</h1>

@@ -5,6 +5,7 @@
   "main": "index.sol1.js",
   "type": "module",
   "dependencies": {
+    "axios": "^0.21.1",
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "faker": "^4.1.0",
