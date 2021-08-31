@@ -1,7 +1,9 @@
 import mongoose from 'mongoose'
+import dotenv from 'dotenv'
 
 // task #1
-const MONGO_URI = 'mongodb+srv://lnferrari:lnferrari@cluster0.zbbq0.mongodb.net/students_db'
+dotenv.config()
+const MONGO_URI = process.env.MONGO_URI
 
 mongoose.connect( MONGO_URI, {
   useNewUrlParser: true,

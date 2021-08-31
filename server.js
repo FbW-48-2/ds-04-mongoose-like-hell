@@ -79,16 +79,8 @@ app.delete('/students/:id', async (req, res, next) => {
 app.get('/migration', async (req, res, next) => {
   try {
     const result = await Student.updateMany(
-      {
-        role: {
-          $exists: false
-        }
-      },
-      {
-        $set: {
-          role: "User"
-        }
-      }
+      { role: { $exists: false } },
+      { $set: { role: "User" } }
     )
     res.json( result )
   } catch (err) {
