@@ -1,22 +1,24 @@
 {
   "name": "exercise",
   "version": "1.0.0",
-  "description": "",
+  "description": "Please take a look at the TASK files in this repo",
   "main": "index.sol1.js",
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "faker": "^4.1.0",
-    "mongoose": "^5.9.21"
+    "mongoose": "^5.13.8"
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/FBW23/ds-mongoose-intro.git"
   },
+  "type": "module",
   "keywords": [],
   "author": "",
   "license": "ISC",
