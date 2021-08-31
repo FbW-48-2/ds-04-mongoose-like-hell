@@ -80,6 +80,17 @@ app.put("/students/:id", async (req, res) => {
   }
 });
 
+//delete student
+app.delete("/students/:id", async (req, res) => {
+  const { id } = req.params;
+  try {
+    const studentDeleted = await Student.findByIdAndDelete(id);
+    res.json(studentDeleted);
+  } catch (error) {
+    next(error);
+  }
+});
+
 //my central error handler is below
 
 app.use((error, req, res, next) => {
