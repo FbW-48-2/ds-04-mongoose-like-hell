@@ -53,11 +53,23 @@ app.get("/students/:id", async (req, res) => {
   }
 });
 
+//create a student
+
+app.post("/students", async (req, res) => {
+  const body = req.body;
+  try {
+    const studentNew = await Student.create(body);
+    res.json(studentNew);
+  } catch (error) {
+    next(error);
+  }
+});
+
 //my central error handler is below
 
-app.use((err, req, res, next) => {
-  console.log(err);
+app.use((error, req, res, next) => {
+  console.log(error);
   res.status(400).json({
-    error: err.message,
+    error: error.message,
   });
 });
